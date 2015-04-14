@@ -1,0 +1,50 @@
+doctype html
+html(lang="es")
+	head
+		title
+	body
+		style.
+			body{text-align:center}
+			label,input{display:block;margin:auto;}
+			table,td,tr{border:solid;margin:auto}
+		h1 #{msg}
+		table
+			tr
+				td Nombre
+				td Apellido
+				td Edad
+			//-Ciclo each para mostrar los datos
+			each val,index in us
+				tr
+					td #{val.Nombre}
+					td #{val.Apellido}
+					td #{val.Edad}
+		div
+			//-Formulario Altas
+			h1 Altas 
+			form(action="/altas",method="POST")
+				label Nombre
+				input(type="text",name="nombre")
+				label Apellidos
+				input(type="text",name="apellido")
+				label Edad
+				input(type="text",name="edad")
+				input(type="submit",value="Guardar")
+		div
+			//-Formulario Bajas
+			h1 Bajas 
+			form(action="/bajas",method="POST")
+				label Nombre
+				input(type="text",name="nombre")
+				input(type="submit",value="Borrar")
+		div
+			//-Formulario para Actualizar
+			h1 Actualizaciones 
+			form(action="/actualizaciones",method="POST")
+				label Nombre
+				input(type="text",name="nombre")
+				label Apellidos
+				input(type="text",name="apellido")
+				label Edad
+				input(type="text",name="edad")
+				input(type="submit",value="Actualizar")

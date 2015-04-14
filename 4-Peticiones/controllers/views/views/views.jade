@@ -1,0 +1,13 @@
+doctype html
+html(lang="es")
+	head
+		meta(charset="utf-8")
+		title Peticiones
+	body
+		h1 #{msg}
+		//-action -> /enviar seria app.post("/enviar")
+		form(action="/enviar",method="POST")
+			label(for="") Ingresa tu nombre
+			//-con el atributo name se accede desde el lado del servidor
+			input(type="text",name="txt")
+			input(type="submit",value="Enviar")
